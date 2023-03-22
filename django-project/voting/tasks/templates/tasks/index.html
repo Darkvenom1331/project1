@@ -1,0 +1,38 @@
+{% extends "tasks/layout.html" %}
+{% block body %}
+<style>
+    h2{
+        padding: 10px;
+        text-align: center;
+        background-color: blanchedalmond;
+        color: black;
+        font-size: 20px;
+    }
+    .header{
+        padding: 20px;
+        text-align: center;
+        background-color: lavender;
+        color: black;
+        font-size: 20px;
+    }
+</style>
+<div class="header">
+    <h1>TASKS</h1>
+</div>
+<center>
+    <link rel ="stylesheet" href="style.css">
+    
+        {% for task in tasks %}
+        <h2>{{ task }}</h2>
+        {% endfor %}
+     
+        <br><br>
+        <form action="{% url 'tasks:add' %}">
+            <button type="submit">
+                Switch to new task
+            </button>
+
+        </form>
+    </center>
+{% endblock %}
+  
